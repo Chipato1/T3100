@@ -1,0 +1,26 @@
+Nach \cite{JUN14} ergeben sich XYZ Hauptkomponenten in der Software für ein Autonomes Fahrzeug.
+Das "Perception" Modul verarbeitet die ungefilterten Sensordaten. Dazu gehören  
+
+
+\section{Ansatz mit Verhaltensbäumen}
+<Problematisch ist, dass >
+Der Implementierung mit einem hierarchischen Zustandsautomaten beruht auf drei unterschiedlichen Ebenen. Diese Ebenen wurden bereits in der Analyse der Aufgabenstellung.
+
+\section{Umgebungsdarstellung}
+Im Moment sind im Bereich des autonomen Fahrens nach \cite{ILI19} vier unterschiedliche Varianten die Umwelt darzustellen. Die Umgebungsdarstellung in einem Softwaresystem fürs autonome Fahren wird meist vom perception System zur Verfügung gestellt. Die Umgebungsdarstellung wird dann einer der Grundlagen auf der das System entscheidet was zu tun ist.
+
+\subsection{Grid-based}
+Umgebungsdarstellungen die auf dem Grid-based Ansatz basieren unterteilen den darzustellenden Raum meist in gleichgroße Quadrate. Die Größe der Quadrate kann dabei variieren, je nachdem wie genau die Darstellung sein soll. Zudem wird jedem quadratischen Teilstück der Umgebung eine Wahrscheinlichkeit zugeordnet, dass es belegt ist. 
+Dieser Ansatz ist besonders geeignet um einfach Wegfindungsalgorithmen anzuwenden.
+Je nachdem wie präzise und in welchem Ausmaß die Umwelt dargestellt werden soll wird dabei viel Speicherplatz verbraucht. Die Berechnung von Strecken wird dann aufwändiger.
+
+\subsection{Feature-based}
+Merkmalsbasierte (engl. Feature-based) Ansätze makieren Objekte auf einer Karte mit ihren jeweiligen Merkmalen und Position. Ein Objekt könnte beispielsweise eine Seitenbegrenzung einer Autobahn sein. Ein Merkmal wäre dann der Verlauf dieser Seitenbegrenzung.
+
+\subsection{Rohdaten}
+Die Verwendung von Rohdaten bedeutet, dass die Sensordaten wie beispielsweise Kamerabilder oder Lidar-Scans direkt gespeichert werden. Meist ist die Verarbeitung dieser Daten sehr komplex. Nach \cite{ILI19} sind Implementierungen die dieses Verfahren verwenden oftmals nur wenig modular, schlecht nachvollziehbar und nicht skalierbar.
+
+\subsection{Latent reprensentation}
+Die Latent representation  Darstellung stellt eine Kompression der zuvor beschriebenen Rohdaten dar. Dies kann beispielsweise durch ein neuronales Netz geschehen. Diese Darstellung ist somit meist schwierig auszuwerten.
+
+Die Interaktion zwischen Fahrzeugen und die Generierung geeigneter Bewegungstrajektorien für das Fahrzeug sind nicht Teil der Arbeit.

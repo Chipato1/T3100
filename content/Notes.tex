@@ -1,0 +1,81 @@
+%!TEX root = ../dokumentation.tex
+To DO
+
+- Rasmussen als PDF
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Anforderungen}
+
+- Während dem Fahren anzeigen
+    - Counter bei wartezeiten
+    - Aktuelle Bedingungen Vorfahrtssituation etc
+- prediktion der States
+- 
+
+- modulares/flexibles System
+
+
+Ergebnis 
+    - Hirachical State-Machine
+
+- Einfache States
+    -> Drive Handler
+        - abhängig von Krümmung und vorrauschauender aktionen
+        - Soll bei hoher Geschwindigkeit und vorne kurve bereits reduzieren
+        - Aufgrund Karte zum Ziel navigieren
+    -> Park Handler
+        - Soll Parkplatz auf Karte finden und einparken
+        
+
+Was passiert wenn overall goal geradeaus fahren aber Kreuzung
+    -> Wie wird sowas auf einer map abgearbeitet???
+
+        
+     
+        
+    - Hindernis
+    
+    
+- Handle von Combined States
+    - Kreuzung mit oder ohne Vorfahrtssituation
+    - Hindernis + fehlende Seitenmarkierung
+    - Hindernis + durchgezogene linie etc
+    
+    -------------------
+    
+    
+    \section{Analyse der Aufgabenstellung}
+Auf oberster Ebene muss die Verhaltenssteuerung entscheiden ob das Fahrzeug frei auf der Straße fahren soll und möglichst viel Strecke zurück zu legen oder das Fahrzeug ein- und auszuparken. Zudem wird auf dieser Ebene festgelegt ob das Fahrzeug noch in der Startbox warten, ober das Fahrzeug über  die Fernbedienung gesteuert wird. Die Gesamte Ausführung der Verhaltenssteuerung soll beendet werden 
+Daraus ergeben sich somit XYZ Zustände auf dieser Ebene.
+<mittlere Ebene>
+Die zuvor beschriebenen Aufgaben der oberen Ebene werden in der zweiten Ebene weiter unterteilt. 
+
+Die Wartezeit in der Start
+
+Die unterste Ebene der Aufgaben bezieht sich lediglich auf das zuvor beschriebene Fahren ohne, dass Sondersituationen eintreten.
+- Warten i
+\newline
+Die Übergänge zwischen den Zuständen werden von bestimmten. Mehrere Zustände können nicht gleichzeitig ausgeführt werden. Somit wird die Ausführung des vorherigen Zustands bei 
+\newline
+Die zuvor beschriebenen Zustände lassen sich teilweise dekomponieren. Hierzu ist es wichtig zu ermitteln welche

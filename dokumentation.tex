@@ -1,0 +1,136 @@
+%%**************************************************************
+%% Vorlage DHBW Arbeiten
+%%
+%% Autor: Carl, Winkler
+%% Datum: 01.05.2018
+%%
+%%**************************************************************
+\documentclass[%
+	pdftex,
+	oneside,		% Einseitiger Druck.
+	12pt,			% Schriftgroesse
+	parskip=half,	% Halbe Zeile Abstand zwischen Absätzen.
+	headsepline,	% Linie nach Kopfzeile.
+	footsepline,	% Linie vor Fusszeile.
+	abstracton,	    % Abstract Überschriften
+	ngerman,		% Translator
+]{scrreprt}
+\input{ads/header}
+
+% Ab jetzt können auch Umlaute verwendet werden
+
+%falls pdftitel = titel der Arbeit
+\newcommand{\titel}{\pdftitel}
+%bei unterschiedlichen Titeln
+%\newcommand{\titel}{l haben wir einen zweizeiligen
+% Bachelorthesistitel}
+\newcommand{\martrikelnr}{1695079}
+\newcommand{\kurs}{ITA17}
+\newcommand{\datumAbgabe}{8. Juni 2020}
+\newcommand{\firma}{Magna PT B.V. \& Co. KG}
+\newcommand{\firmenort}{Untergruppenbach}
+\newcommand{\abgabeort}{Stuttgart}
+\newcommand{\abschluss}{Bachelor of Science}
+\newcommand{\studiengang}{IT Automotive}
+\newcommand{\dhbw}{Stuttgart}
+\newcommand{\betreuer}{Prof. Dr. Zoltan Adam Zomotor}
+\newcommand{\gutachter}{Dr. Who}
+\newcommand{\zeitraum}{20.01.2020 - 08.06.2020}
+\newcommand{\arbeitsart}{\arbeit}
+\renewcommand*{\chapterheadstartvskip}{\vspace*{1cm}}
+
+\makeglossaries
+\input{ads/glossary}
+
+\begin{document}
+
+	% Deckblatt
+	\begin{spacing}{1}
+		\input{ads/deckblatt}
+	\end{spacing}
+	\newpage
+
+	\renewcommand{\thepage}{\Roman{page}}
+	\setcounter{page}{1}
+
+	% Sperrvermerk
+	% \cleardoublepage
+	% \input{ads/sperrvermerk}
+	% \newpage
+	
+	% Erklärung
+	\cleardoublepage
+	\input{ads/erklaerung}
+	\newpage
+
+	% Abstract
+	\cleardoublepage
+	\input{ads/abstract}
+	\newpage
+
+	\pagestyle{plain}
+
+	% Inhaltsverzeichnis
+	\begin{spacing}{1.1}
+		\setcounter{tocdepth}{2}
+		%für die Anzeige von Unterkapiteln im Inhaltsverzeichnis
+		%\setcounter{tocdepth}{2}
+		\tableofcontents
+	\end{spacing}
+	\newpage
+	
+	% Abkürzungsverzeichnis
+    \cleardoublepage
+	\phantomsection \label{listofacs}
+    \addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+	\input{ads/acronyms}
+
+	% Abbildungsverzeichnis
+	\cleardoublepage
+	\phantomsection \label{listoffig}
+	\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+	\listoffigures
+	
+	
+	%Tabellenverzeichnis
+	\cleardoublepage
+	\phantomsection \label{listofftab}
+	\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
+	\listoftables
+	\clearpage
+	
+	\renewcommand{\thepage}{\arabic{page}}
+	\setcounter{page}{1}
+	
+	% Inhalt
+	\input{content/Einleitung.tex}
+	\input{content/Stand_der_Technik.tex}
+	\input{content/Inhalt.tex}
+	\input{content/Zusammenfassung.tex}
+	\clearpage
+
+
+	% Quellcodeverzeichnis
+	%\cleardoublepage
+	%\phantomsection \label{listoflist}
+	%\addcontentsline{toc}{chapter}{Listings}
+	%\lstlistoflistings
+    \renewcommand{\thepage}{\Roman{page}}
+	\setcounter{page}{13}
+	\input{content/Anhang.tex}
+	% Literaturverzeichnis
+	\cleardoublepage
+	\phantomsection \label{listoflit}
+	\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+	
+	%Bib style
+	%\bibliographystyle{agsm} %Havard
+	%\bibliographystyle{amsplain} %Durchnummeriert
+	%\bibliographystyle{amsalpha} %Kürzel für Autor und Jahr
+	%see more: http://amath.colorado.edu/documentation/LaTeX/reference/faq/bibstyles.pdf
+
+	\printbibliography[title=Literaturverzeichnis]
+
+	% Glossar
+	\printglossary[style=altlist,title=Glossar]
+\end{document}
